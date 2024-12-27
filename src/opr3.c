@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   opr3.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdulmecitz <aabdulmecitz@student.42.f    +#+  +:+       +#+        */
+/*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 20:42:29 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/23 17:48:54 by aabdulmecit      ###   ########.fr       */
+/*   Created: 2024/12/27 18:01:43 by aozkaya           #+#    #+#             */
+/*   Updated: 2024/12/27 18:02:42 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "./push_swap.h"
 
-# define GREEN "\033[0;32m"
-# define RED "\033[1;31m"
-# define GREY "\033[0;90m"
-# define CYAN "\033[1;96m"
-# define RESET "\033[0m"
+void	rra(t_stack **stack, int msg)
+{
+    
+}
 
-# include "./lib/libft/libft.h"
+void	rrb(t_stack **stack, int msg)
+{
+    
+}
 
-void    err(char *msg);
-
-
-
-#endif
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+    
+}
