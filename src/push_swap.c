@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:39:02 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/27 18:05:41 by aozkaya          ###   ########.fr       */
+/*   Updated: 2024/12/28 02:22:03 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int main(int argc, char const *argv[])
 {
-    t_stack *a;
-    t_stack *b;
-    t_stack *tmp;
+    t_stack *stack_a;
+    char    **input;
     
-    a = init_a(argc, argv);
-    b = NULL;
+    input = NULL;
+    if (argc == 1)
+        return(-1);
+    input = create_input();
+    
     
     return 0;
 }

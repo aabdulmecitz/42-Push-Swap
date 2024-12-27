@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:42:29 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/27 18:18:22 by aozkaya          ###   ########.fr       */
+/*   Updated: 2024/12/28 02:49:31 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 t_stack init_a(int argc, char *argv[]);
 void    err(char *msg);
+void	exit_with_error(char *message);
 
 
 
