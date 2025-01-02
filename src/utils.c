@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 02:21:38 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/02 18:42:48 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:55:53 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,17 +127,12 @@ int	stack_len(t_stack **stack)
 	return (i);
 }
 
-void	get_last_node(t_stack **stack, t_stack **last)
+t_stack	*get_last_node(t_stack *node)
 {
-	if (!stack || !*stack)
-	{
-        *last = NULL; 
-        return;
-    }
-    t_stack* temp = *stack;
-    while (temp->next)
-	{
-        temp = temp->next;
-    }
-    *last = temp;
+	if (!node)
+		return (NULL);
+	while (node->next)
+		node = node->next;
+	return node;
 }
+
