@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 02:21:38 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/28 03:04:26 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:42:48 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,60 @@ char    **create_input(int argc, char **argv)
 		argc--;
 	}
 	return (input);
+}
+
+void	check_dup(t_stack **stack)
+{
+	t_stack *tmp1;
+	t_stack *tmp2;
+
+	if (!stack)
+		return;
+	tmp1 = stack;
+	while (tmp1)
+	{
+		tmp2 = tmp1->next;
+		while (tmp2 && tmp2->nbr != 0)
+		{
+			if (tmp1->nbr == tmp2->nbr)
+			{
+				free_stack(*stack);
+				exit_with_error("error: duplicate number in stack!\n");;
+			}
+			tmp2 = tmp2->next;
+		}
+		tmp1 = tmp1->next;
+	}
+}
+
+int	stack_len(t_stack **stack)
+{
+	t_stack *tmp;
+	int		i;
+
+	i = 0;
+	if (!stack)
+		return;
+	tmp = stack;
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
+}
+
+void	get_last_node(t_stack **stack, t_stack **last)
+{
+	if (!stack || !*stack)
+	{
+        *last = NULL; 
+        return;
+    }
+    t_stack* temp = *stack;
+    while (temp->next)
+	{
+        temp = temp->next;
+    }
+    *last = temp;
 }

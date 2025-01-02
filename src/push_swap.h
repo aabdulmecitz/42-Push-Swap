@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:42:29 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/28 03:10:41 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/02 19:10:53 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,36 @@ typedef struct s_stack
 	int					index;
 	int					push_cost;
 	bool				above_median;
-	struct s_stack_node	*target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
+	t_stack	*target_node;
+	t_stack	*next;
+	t_stack	*prev;
 }	t_stack;
 
-void	sa(t_stack **stack, int msg);
-void	sb(t_stack **stack, int msg);
-void	ss(t_stack **stack_a, t_stack **stack_b);
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-void	ra(t_stack **stack, int msg);
-void	rb(t_stack **stack, int msg);
-void	rr(t_stack **stack_a, t_stack **stack_b);
-void	rra(t_stack **stack, int msg);
-void	rrb(t_stack **stack, int msg);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack,  bool disable_print);
+void	sb(t_stack **stack,  bool disable_print);
+void	ra(t_stack **stack,  bool disable_print);
+void	rb(t_stack **stack,  bool disable_print);
+void	rra(t_stack **stack,  bool disable_print);
+void	rrb(t_stack **stack,  bool disable_print);
+void	ss(t_stack **stack_a, t_stack **stack_b, bool disable_print);
+void	pa(t_stack **stack_a, t_stack **stack_b, bool disable_print);
+void	pb(t_stack **stack_a, t_stack **stack_b, bool disable_print);
+void	rr(t_stack **stack_a, t_stack **stack_b, bool disable_print);
+void	rrr(t_stack **stack_a, t_stack **stack_b, bool disable_print);
 
-t_stack init_a(int argc, char *argv[]);
+t_stack	init_a(int argc, char *argv[]);
 void    err(char *msg);
 void	exit_with_error(char *message);
-int	str_arr_size(char **input);
+int		str_arr_size(char **input);
 long	ft_atol(const char *str);
 t_stack	*init_stack_a(char **input);
+char    **create_input(int argc, char **argv);
+void    free_stack(t_stack *node);
+void    free_inputs(char **input);
+int		stack_len(t_stack **stack);
+void	get_last_node(t_stack **stack, t_stack **last);
+
+
 
 
 
