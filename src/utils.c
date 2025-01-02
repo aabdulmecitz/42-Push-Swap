@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 02:21:38 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/28 02:47:44 by aozkaya          ###   ########.fr       */
+/*   Updated: 2024/12/28 03:04:26 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,6 @@ char    **parse_input(int argc, char **argv)
         }
     }
     return (res);
-}
-
-int	str_arr_size(char **input)
-{
-	int	i;
-
-	i = 0;
-	while (input[i])
-		i++;
-	return (i);
 }
 
 int	check_syntax(char *str)

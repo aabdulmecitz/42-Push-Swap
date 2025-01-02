@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:42:29 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/28 02:49:31 by aozkaya          ###   ########.fr       */
+/*   Updated: 2024/12/28 03:10:41 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../lib/libft/libft.h"
 # include <stdarg.h>
+# include <limits.h>
+# include <stdbool.h>
 
 # define GREEN "\033[0;32m"
 # define RED "\033[1;31m"
@@ -24,8 +26,13 @@
 
 typedef struct s_stack
 {
-	int				content;
-	struct s_stack	*next;
+	int					nbr;
+	int					index;
+	int					push_cost;
+	bool				above_median;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
 }	t_stack;
 
 void	sa(t_stack **stack, int msg);
@@ -43,6 +50,9 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack init_a(int argc, char *argv[]);
 void    err(char *msg);
 void	exit_with_error(char *message);
+int	str_arr_size(char **input);
+long	ft_atol(const char *str);
+t_stack	*init_stack_a(char **input);
 
 
 

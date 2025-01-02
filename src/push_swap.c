@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:39:02 by aozkaya           #+#    #+#             */
-/*   Updated: 2024/12/28 02:22:03 by aozkaya          ###   ########.fr       */
+/*   Updated: 2024/12/28 03:12:13 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(int argc, char const *argv[])
     input = NULL;
     if (argc == 1)
         return(-1);
-    input = create_input();
-    
+    input = create_input(argc, argv);
+    stack_a = init_stack_a(input);
     
     return 0;
 }
