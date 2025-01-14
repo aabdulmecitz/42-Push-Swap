@@ -17,6 +17,8 @@ FILES			=	push_swap \
 NAME			=	push_swap
 AR_NAME			=	push_swap.a
 
+YELLOW			= \033[1;36m
+BLUE			= \033[1;36m
 GREEN			= \033[0;32m
 RED				= \033[0;31m
 RESET			= \033[0m
