@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emgul <emgul@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:43 by emgul             #+#    #+#             */
-/*   Updated: 2024/05/22 12:14:17 by emgul            ###   ########.fr       */
+/*   Created: 2025/01/14 19:48:39 by aozkaya           #+#    #+#             */
+/*   Updated: 2025/01/14 19:48:46 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 #include "../lib/libft/libft.h"
-
-// void __attribute__ ((destructor)) a()
-// {
-// 	system("leaks push_swap");
-// }
 
 int	main(int argc, char **argv)
 {
