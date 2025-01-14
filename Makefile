@@ -1,61 +1,83 @@
-NAME			= push_swap
-NAME_BONUS		= push_swap_bonus
+FILES			=	push_swap \
+					sort_stack	\
+					init_a_to_b	\
+					init_b_to_a	\
+					utils/check	\
+					utils/error	\
+					utils/find_node	\
+					utils/free	\
+					utils/utils	\
+					utils/get_node_to_top	\
+					utils/stack_utils	\
+					commands/push	\
+					commands/swap	\
+					commands/rotate	\
+					commands/rev_rotate
+
+NAME			=	push_swap
+AR_NAME			=	push_swap.a
 
 GREEN			= \033[0;32m
 RED				= \033[0;31m
 RESET			= \033[0m
 
-LIBFT 			= lib/libft/libft.a
+CC				=	gcc
+CFLAGS			=	-Wall -Wextra -Werror -I $(LIBFT_PATH) 
+MFLAGS			=	-s -j16 -C
+AR				=	ar rcs
+RM				=	rm -rf
 
-CC 				= cc
+LIBFT_PATH		=	lib/libft/
+LIBFT			=	$(LIBFT_PATH)libft.a
 
-STANDARD_FLAGS 	= -Wall -Werror -Wextra
+CHECKER_PATH	=	checker/
+CHECKER_NAME	=	checker
 
-REMOVE 			= rm -f
+FILES_PATH		=	src
 
-SRCS_DIR		= ./src/
-BONUS_SRCS_DIR		= ./bonus/
+SRCS			=	$(addprefix $(FILES_PATH)/, $(addsuffix .c, $(FILES)))
+OBJS			=	$(SRCS:.c=.o)
 
-SRCS 			= $(addprefix $(SRCS_DIR),\
-				)
+.c.o:
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-BONUS_SRC 		= $(addprefix $(BONUS_SRCS_DIR),\
-				)
+$(NAME): $(LIBFT) $(OBJS) 
+	@gcc $(OBJS) -o $(NAME) $(LIBFT)
+	@echo "$(GREEN)-== $(NAME) created! ==-$(DEFAULT)"
 
-all:			${NAME} ${LIBFT} 
-bonus:			${NAME_BONUS} ${LIBFT}
+$(LIBFT):
+	@make $(MFLAGS) $(LIBFT_PATH)
 
-${NAME}: 		
-				${CC} ${SRCS} ${LIBFT} -o ${NAME}
-				make compile_libs
-				@echo "$(NAME): $(GREEN)$(NAME) was compiled.$(RESET)"
-				@echo
+$(AR_NAME): $(LIBFT) $(OBJS) 
+	@$(AR) $(AR_NAME) $(OBJS)
 
-${NAME_BONUS}: 		
-				${CC} ${BONUS_SRC} ${LIBFT} -o ${NAME_BONUS}
-				@echo "$(NAME_BONUS): $(GREEN)$(NAME_BONUS) was compiled.$(RESET)"
-				@echo
+bonus:	$(AR_NAME)
+	@make $(MFLAGS) $(CHECKER_PATH)
 
-${LIBFT}:
-				@echo
-				make bonus -C lib/libft
-
+all: $(NAME)
+	
 clean:
-				make clean -C lib/libft
-				@echo
+	@$(RM) $(OBJS)
+	@make $(MFLAGS) $(CHECKER_PATH) clean
+	@echo "$(YELLOW)-== all created object files deleted! -==$(DEFAULT)"
 
-fclean:
-				${REMOVE} ${NAME} ${NAME_BONUS}
-				@echo "${NAME}: ${RED}${NAME} and ${NAME_BONUS} were deleted${RESET}"
-				@echo
+fclean: clean libclean
+	@$(RM) $(NAME)
+	@$(RM) $(AR_NAME)
+	@make $(MFLAGS) $(CHECKER_PATH) fclean
+	@echo "$(RED)-== all created files deleted! -==$(DEFAULT)"
+
+libclean:
+	@make $(MFLAGS) $(LIBFT_PATH) fclean
+	@make $(MFLAGS) $(CHECKER_PATH) fclean
+	@echo "$(BLUE)-== all created files deleted in libraries! -==$(DEFAULT)"
+
+re: fclean all
+
 push:
 	git add .
 	git commit -m "commit"
 	git push
-
-re:				fclean all
-
-re_bonus:	fclean bonus
 
 compile_libs:
 	@make -sC lib/libft
@@ -66,8 +88,5 @@ update:
 
 run:			re
 				./${NAME} <sth>
-
-run_bonus:		re_bonus
-				./${NAME_BONUS} <sth>
 
 .PHONY:			all clean fclean re rebonus valgrind run run_bonus makefile
