@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emgul <emgul@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 13:00:52 by emgul             #+#    #+#             */
-/*   Updated: 2024/05/21 17:11:03 by emgul            ###   ########.fr       */
+/*   Updated: 2025/01/17 17:14:37 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	check_line(char *line)
 		return (1);
 	else
 	{
-		error_message("Error: invalid instruction\n");
+		error_message("Error\n");
 		return (-1);
 	}
 }
@@ -96,7 +96,7 @@ int	is_b_empty(t_stack_node **stack_b)
 {
 	if (*stack_b)
 	{
-		error_message("stack_b cannot be empty after instructions!\n");
+		error_message("Error\n");
 		return (-1);
 	}
 	else

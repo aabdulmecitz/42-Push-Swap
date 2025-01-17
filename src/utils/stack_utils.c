@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:48:20 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/14 19:48:22 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/17 17:16:22 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,6 @@ void	set_index_and_median(t_stack_node *node)
 	}
 }
 
-/**
- * @brief Initializes stack A with integers parsed from input strings.
- *
- * @param input Array of strings representing integers
- *  to initialize the stack with.
- * @return A pointer to the head of the initialized stack A,
- *  or NULL if an error occurs.
- */
 t_stack_node	*init_stack_a(char **input)
 {
 	t_stack_node	*stack_a;
@@ -106,13 +98,13 @@ t_stack_node	*init_stack_a(char **input)
 		nbr = ft_atol(*input);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
-			error_message("The input exceeds the bounds of an integer.");
+			error_message("Error");
 			return (NULL);
 		}
 		if (append_node(&stack_a, (int)nbr) == -1)
 		{
 			free_stack(stack_a);
-			error_message("the node could not be created.");
+			error_message("Error");
 			return (NULL);
 		}
 		input++;

@@ -14,6 +14,23 @@ FILES			=	push_swap \
 					commands/rotate	\
 					commands/rev_rotate
 
+BONUS_FILES		=	./checker_src/checker_bonus \
+					./checker_src/utils_bonus \
+					./src/sort_stack	\
+					./src/init_a_to_b	\
+					./src/init_b_to_a	\
+					./src/utils/check	\
+					./src/utils/error	\
+					./src/utils/find_node	\
+					./src/utils/free	\
+					./src/utils/utils	\
+					./src/utils/get_node_to_top	\
+					./src/utils/stack_utils	\
+					./src/commands/push	\
+					./src/commands/swap	\
+					./src/commands/rotate	\
+					./src/commands/rev_rotate
+
 NAME			=	push_swap
 AR_NAME			=	push_swap.a
 
@@ -32,13 +49,15 @@ RM				=	rm -rf
 LIBFT_PATH		=	lib/libft/
 LIBFT			=	$(LIBFT_PATH)libft.a
 
-CHECKER_PATH	=	checker/
+CHECKER_PATH	=	checker_src/
 CHECKER_NAME	=	checker
 
 FILES_PATH		=	src
 
 SRCS			=	$(addprefix $(FILES_PATH)/, $(addsuffix .c, $(FILES)))
+BONUS			= 	$(addsuffix .c, $(BONUS_FILES))
 OBJS			=	$(SRCS:.c=.o)
+BONUS_OBJS			=$(BONUS:.c=.o)
 
 .c.o:
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -53,8 +72,8 @@ $(LIBFT):
 $(AR_NAME): $(LIBFT) $(OBJS) 
 	@$(AR) $(AR_NAME) $(OBJS)
 
-bonus:	$(AR_NAME)
-	@make $(MFLAGS) $(CHECKER_PATH)
+bonus:	$(LIBFT) $(AR_NAME) $(BONUS_OBJS)
+	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(CHECKER_NAME)
 
 all: $(NAME)
 	

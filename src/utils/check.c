@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:47:46 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/14 19:47:48 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/17 17:15:44 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,6 @@ int	check_input(char **input)
 	return (0);
 }
 
-/**
- * @brief Checks the syntax of a given string
- *  to determine if it represents a valid integer.
- *
- * @param str The string to be checked.
- * @return 1 if the string is a valid integer,
- *  0 if the string is empty or NULL, -1 if the string has invalid syntax.
- */
 int	check_syntax(char *str)
 {
 	if (!str || !*str)
@@ -76,7 +68,7 @@ void	check_duplicate(t_stack_node **stack_a)
 			if (tmp1->nbr == tmp2->nbr)
 			{
 				free_stack(*stack_a);
-				exit_with_error("passing the same number is not allowed\n");
+				exit_with_error("Error\n");
 			}
 			tmp2 = tmp2->next;
 		}
@@ -84,14 +76,6 @@ void	check_duplicate(t_stack_node **stack_a)
 	}
 }
 
-/**
- * @brief Whether the input is a single piece or multiple pieces,
- *  it splits them into arguments.
- *
- * @param argc The number of arguments.
- * @param argv The arguments to be passed to the program.
- * @return A list of arguments separated by spaces.
- */
 char	**parse_input(int argc, char **argv)
 {
 	char	**result;
@@ -121,14 +105,6 @@ char	**parse_input(int argc, char **argv)
 	return (result);
 }
 
-/**
- * @brief Creates a list of arguments from the input,
- *  processes them, and checks their syntax.
- *
- * @param argc The number of arguments.
- * @param argv The arguments to be passed to the program.
- * @return A list of arguments, processed and checked for syntax errors.
- */
 char	**create_input(int argc, char **argv)
 {
 	char	**input;
@@ -139,14 +115,14 @@ char	**create_input(int argc, char **argv)
 	input = NULL;
 	input = parse_input(argc, argv);
 	if (!input)
-		exit_with_error("error while creating input!\n");
+		exit_with_error("Error!\n");
 	if (argc == 1)
 		argc = str_arr_size(input);
 	i = 0;
 	while (argc)
 	{
 		if (check_syntax(input[i]) == -1)
-			exit_with_error("bad input: error in check_syntax() func.\n");
+			exit_with_error("Error\n");
 		i++;
 		argc--;
 	}
