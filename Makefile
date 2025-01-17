@@ -41,7 +41,7 @@ RED				= \033[0;31m
 RESET			= \033[0m
 
 CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror -I $(LIBFT_PATH) -g
+CFLAGS			=	-Wall -Wextra -Werror -I $(LIBFT_PATH)
 MFLAGS			=	-s -j16 -C
 AR				=	ar rcs
 RM				=	rm -rf
