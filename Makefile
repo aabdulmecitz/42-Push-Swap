@@ -41,7 +41,7 @@ RED				= \033[0;31m
 RESET			= \033[0m
 
 CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror -I $(LIBFT_PATH) 
+CFLAGS			=	-Wall -Wextra -Werror -I $(LIBFT_PATH) -g
 MFLAGS			=	-s -j16 -C
 AR				=	ar rcs
 RM				=	rm -rf
@@ -64,6 +64,7 @@ BONUS_OBJS			=$(BONUS:.c=.o)
 
 $(NAME): $(LIBFT) $(OBJS) 
 	@gcc $(OBJS) -o $(NAME) $(LIBFT)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 	@echo "$(GREEN)-== $(NAME) created! ==-$(DEFAULT)"
 
 $(LIBFT):
@@ -74,23 +75,22 @@ $(AR_NAME): $(LIBFT) $(OBJS)
 
 bonus:	$(LIBFT) $(AR_NAME) $(BONUS_OBJS)
 	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(CHECKER_NAME)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 all: $(NAME)
 	
 clean:
-	@$(RM) $(OBJS)
-	@make $(MFLAGS) $(CHECKER_PATH) clean
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 	@echo "$(YELLOW)-== all created object files deleted! -==$(DEFAULT)"
 
 fclean: clean libclean
 	@$(RM) $(NAME)
-	@$(RM) $(AR_NAME)
-	@make $(MFLAGS) $(CHECKER_PATH) fclean
+	@$(RM) $(AR_NAME) 
+	@$(RM) $(CHECKER_NAME)
 	@echo "$(RED)-== all created files deleted! -==$(DEFAULT)"
 
 libclean:
 	@make $(MFLAGS) $(LIBFT_PATH) fclean
-	@make $(MFLAGS) $(CHECKER_PATH) fclean
 	@echo "$(BLUE)-== all created files deleted in libraries! -==$(DEFAULT)"
 
 re: fclean all
