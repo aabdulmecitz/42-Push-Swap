@@ -6,7 +6,7 @@
 #    By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 07:09:36 by emgul             #+#    #+#              #
-#    Updated: 2025/01/17 14:46:16 by aozkaya          ###   ########.fr        #
+#    Updated: 2025/01/17 17:16:55 by aozkaya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ $(NAME): $(OBJS)
 	@$(RM) $(OBJS)
 	@find . -name "*.dSYM" -type d | xargs $(RM)
 	@$(RM) ../push_swap.a
+	@make clean
 	echo "$(GREEN)-== $(NAME) created! ==-$(DEFAULT)"
 
 all: $(NAME)
