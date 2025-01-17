@@ -65,6 +65,7 @@ BONUS_OBJS			=$(BONUS:.c=.o)
 $(NAME): $(LIBFT) $(OBJS) 
 	@gcc $(OBJS) -o $(NAME) $(LIBFT)
 	@$(RM) $(OBJS) $(BONUS_OBJS)
+	@make -C $(LIBFT_PATH) clean
 	@echo "$(GREEN)-== $(NAME) created! ==-$(DEFAULT)"
 
 $(LIBFT):
