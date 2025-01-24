@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:48:20 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/17 17:16:22 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 20:07:48 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,13 +98,13 @@ t_stack_node	*init_stack_a(char **input)
 		nbr = ft_atol(*input);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
-			error_message("Error");
+			error_message();
 			return (NULL);
 		}
 		if (append_node(&stack_a, (int)nbr) == -1)
 		{
 			free_stack(stack_a);
-			error_message("Error");
+			error_message();
 			return (NULL);
 		}
 		input++;

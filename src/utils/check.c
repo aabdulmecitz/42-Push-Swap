@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:47:46 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/17 17:15:44 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 20:04:00 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_duplicate(t_stack_node **stack_a)
 			if (tmp1->nbr == tmp2->nbr)
 			{
 				free_stack(*stack_a);
-				exit_with_error("Error\n");
+				exit_with_error();
 			}
 			tmp2 = tmp2->next;
 		}

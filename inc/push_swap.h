@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:17:20 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/18 19:18:57 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 20:07:30 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int						str_arr_size(char **input);
 
 int						get_stack_len(t_stack_node *node);
 int						stack_sorted(t_stack_node *node);
-t_stack_node			*init_stack_a(char **argv);
+t_stack_node *init_stack_a(char **argv);
+void error_message();
 int						append_node(t_stack_node **stack, int nbr);
 void					set_index_and_median(t_stack_node *node);
 t_stack_node			*get_cheapest_node(t_stack_node *node_a,
@@ -67,8 +68,8 @@ void					get_node_to_top_b(t_stack_node **stack_b,
 							t_stack_node *top_node);
 void					lowest_node_on_top(t_stack_node **stack_a);
 
-void					exit_with_error(char *message);
-void					error_message(char *message);
+void					exit_with_error();
+void					error_message();
 
 void					check_duplicate(t_stack_node **stack_a);
 int						check_input(char **input);
