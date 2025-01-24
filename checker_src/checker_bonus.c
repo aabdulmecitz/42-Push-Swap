@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:16:22 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/18 19:16:24 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 19:50:43 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	stack_a = init_stack_a(input);
 	free_input(input);
 	check_duplicate(&stack_a);
-	if (stack_a && stack_sorted(stack_a) <= 0)
+	if (stack_a)
 	{
 		sort_by_input(&stack_a);
 		is_stack_sorted(&stack_a);
