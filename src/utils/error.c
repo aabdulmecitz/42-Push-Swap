@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:47:51 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/24 20:04:45 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 20:10:27 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 void	exit_with_error()
 {
-	ft_putstr_fd("Error", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(-1);
 }
 
 void	error_message()
 {
-	ft_putstr_fd("Error", 2);
+	ft_putstr_fd("Error\n", 2);
 }
