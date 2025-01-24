@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:17:09 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/18 19:17:11 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/24 20:16:48 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	process_the_input(char *input, t_stack_node **stack_a,
 	else if (ft_strncmp(input, "rr", 2) == 0)
 		rr(stack_a, stack_b, true);
 	else
-		error_message("Error");
+		exit_with_error("Error");
 }
 
 void	sort_by_input(t_stack_node **stack_a)
