@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:17:09 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/27 15:56:10 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/27 18:03:34 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	check_line(char *line)
 		return (1);
 	else
 	{
-		error_message("Error\n");
+		error_message();
 		return (-1);
 	}
 }
@@ -96,7 +96,7 @@ int	is_b_empty(t_stack_node **stack_b)
 {
 	if (*stack_b)
 	{
-		error_message("Error\n");
+		error_message();
 		return (-1);
 	}
 	else
