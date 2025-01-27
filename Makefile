@@ -100,3 +100,4 @@ run: re
 	./$(NAME) <sth>
 
 .PHONY: all clean fclean re bonus push compile_libs update run
+
