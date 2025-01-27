@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:16:22 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/24 19:50:43 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/27 15:46:32 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 		sort_by_input(&stack_a);
 		is_stack_sorted(&stack_a);
 	}
+	
 	if (stack_a)
 		free_stack(stack_a);
 	return (0);
