@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:47:46 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/27 17:43:08 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/27 17:58:24 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,14 +115,14 @@ char	**create_input(int argc, char **argv)
 	input = NULL;
 	input = parse_input(argc, argv);
 	if (!input)
-		exit_with_error("Error!\n");
+		exit_with_error();
 	if (argc == 1)
 		argc = str_arr_size(input);
 	i = 0;
 	while (argc)
 	{
 		if (check_syntax(input[i]) == -1)
-			exit_with_error("Error\n");
+			exit_with_error();
 		i++;
 		argc--;
 	}
