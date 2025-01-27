@@ -6,7 +6,7 @@
 /*   By: aozkaya <aozkaya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:48:39 by aozkaya           #+#    #+#             */
-/*   Updated: 2025/01/14 19:48:46 by aozkaya          ###   ########.fr       */
+/*   Updated: 2025/01/27 15:22:21 by aozkaya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,7 @@ int	main(int argc, char **argv)
 		free_stack(stack_a);
 	return (0);
 }
+
+// Easiest way to run
+// ARG=($(shuf -i 1-2000000 -n 100)); ./push_swap $ARG | ./checker_linux $ARG
+// ARG=($(shuf -i 1-2000000 -n 100)); ./push_swap $ARG | ./checker $ARG
